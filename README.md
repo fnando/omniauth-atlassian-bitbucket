@@ -40,11 +40,11 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-Now visit `/auth/bitbucket` to start authentication against Sentry.
+Now visit `/auth/bitbucket` to start authentication against Bitbucket.
 
 ## Contributing
 
-1. Fork [omniauth-bcx](https://github.com/fnando/omniauth-atlassian-bitbucket/fork)
+1. Fork [omniauth-atlassian-bitbucket](https://github.com/fnando/omniauth-atlassian-bitbucket/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
