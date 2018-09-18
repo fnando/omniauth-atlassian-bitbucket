@@ -4,7 +4,6 @@ require "omniauth-oauth2"
 module OmniAuth
   module Strategies
     class Bitbucket < OmniAuth::Strategies::OAuth2
-
       option :client_options,
              site: "https://bitbucket.org",
              authorize_url: "/site/oauth2/authorize",
