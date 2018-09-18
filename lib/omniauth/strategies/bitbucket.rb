@@ -4,22 +4,11 @@ require "omniauth-oauth2"
 module OmniAuth
   module Strategies
     class Bitbucket < OmniAuth::Strategies::OAuth2
-      EMAIL = "email".freeze
-      ACCOUNT = "account".freeze
 
       option :client_options,
              site: "https://bitbucket.org",
              authorize_url: "/site/oauth2/authorize",
              token_url: "/site/oauth2/access_token"
-
-      def authorize_params
-        super.tap do |params|
-          scope = params[:scope].to_s.split(/\s+/)
-          scope << EMAIL unless scope.include?(EMAIL)
-          scope << ACCOUNT unless scope.include?(ACCOUNT)
-          params[:scope] = scope.join(" ")
-        end
-      end
 
       def callback_url
         full_host + script_name + callback_path
