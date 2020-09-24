@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require "omniauth"
 require "omniauth-oauth2"
 
 module OmniAuth
   module Strategies
     class Bitbucket < OmniAuth::Strategies::OAuth2
-      EMAIL = "email".freeze
-      ACCOUNT = "account".freeze
+      EMAIL = "email"
+      ACCOUNT = "account"
 
       option :client_options,
              site: "https://bitbucket.org",
@@ -53,7 +55,9 @@ module OmniAuth
       end
 
       def emails
-        @emails ||= deep_symbolize(access_token.get("/api/2.0/user/emails").parsed).fetch(:values)
+        @emails ||= deep_symbolize(
+          access_token.get("/api/2.0/user/emails").parsed
+        ).fetch(:values)
       end
 
       def primary_email

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class DataTest < Minitest::Test
@@ -43,7 +45,9 @@ class DataTest < Minitest::Test
   end
 
   test "returns info" do
-    strategy.stubs(:raw_info).returns(username: "USERNAME", display_name: "NAME")
+    strategy
+      .stubs(:raw_info)
+      .returns(username: "USERNAME", display_name: "NAME")
     strategy.stubs(:primary_email).returns("EMAIL")
 
     info = strategy.info
